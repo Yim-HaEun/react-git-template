@@ -3,7 +3,8 @@ import './App.css';
 //import ChildComponent from './ChildComponent';
 //import UserInfo from './UserInfo';
 //import Counter from './ReducerCount';
-import Quiz from './Quiz';
+//import Quiz from './Quiz';
+import NumberGuessingGame from './NumberGuessingGame';
 //import ThemeToggleButton from './ThemeToggleButton';
 //.Provider :해당 컴포넌트를
 //통해서 ThemeContext 안에 있는
@@ -13,7 +14,8 @@ function App() {
   return (
     //<ThemeProvider>*/}
     <div>
-      <Quiz />
+      <NumberGuessingGame />
+      {/*<Quiz />*/}
       {/*<h1>테마 변경</h1>*/}
       {/*<ThemeToggleButton />*/}
     </div>
