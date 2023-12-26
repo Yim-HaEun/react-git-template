@@ -2,7 +2,8 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NumberGuessingGame from './NumberGuessingGame';
-import Quiz from './QuizApp';
+import Quiz from './Quiz';
+import Modalcomponent from './Modalcomponent';
 
 const App = () => {
   return (
@@ -19,6 +20,9 @@ const App = () => {
           <Link to="/quiz" className="nav-link">
             Quiz
           </Link>
+          <Link to="/Modal" className="nav-link">
+            Modal Component
+          </Link>
         </nav>
 
         <Routes>
@@ -28,6 +32,7 @@ const App = () => {
             element={<NumberGuessingGame />}
           />
           <Route path="/quiz" element={<Quiz />} />
+          <Route path="/Modal" element={<Modalcomponent />} />
         </Routes>
       </div>
     </Router>
