@@ -4,7 +4,7 @@ import './App.css';
 //import UserInfo from './UserInfo';
 //import Counter from './ReducerCount';
 //import Quiz from './Quiz';
-import NumberGuessingGame from './NumberGuessingGame';
+import NumberGuessingGame from '../../react-game/src/NumberGuessingGame';
 //import ThemeToggleButton from './ThemeToggleButton';
 //.Provider :해당 컴포넌트를
 //통해서 ThemeContext 안에 있는

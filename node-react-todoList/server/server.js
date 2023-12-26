@@ -23,6 +23,7 @@ const PORT = 5000;
 
 //db연결 정보
 const dbConfig = {
+  //user password connectString은 모두 고정값
   user: 'khbank',
   password: 'khbank',
   connectString: 'localhost:1521/XE',
@@ -40,7 +41,10 @@ async function runQuery(sql, binds = [], options = {}) {
   try {
     connection = await oracledb.getConnection(dbConfig); //await를 사용해서 비동기적으로 연결을 기다림
     const result = await connection.execute(sql, binds, options); //execute를 사용해서 쿼리를 실행할 수 있도록 함
-    return result.rows; //쿼리 실행 결과에서 행 정보를 모두 반환하겠다 표기
+    return result.rows.map((row) => ({
+      ID: row[0],
+      TASK: row[1],
+    })); //쿼리 실행 결과에서 행 정보를 모두 반환하겠다 표기
   } catch (err) {
     console.error(err);
   } finally {
@@ -56,6 +60,12 @@ async function runQuery(sql, binds = [], options = {}) {
 //이제는 api를 사용해서 backend 연결을 설정해줌
 app.get('/', (request, response) => {
   response.send('백엔드 연결 성공!');
+});
+
+//api를 활용해서 db query에 작성한 내용 갖고오기
+app.get('/api/todos', async (request, response) => {
+  const todos = await runQuery('SELECT * FROM todos');
+  response.json(todos);
 });
 
 //우리가 연결한 PORT에 정상적으로 연결되었는지 확인하기위한 console문 출력해주기

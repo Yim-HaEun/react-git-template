@@ -14,7 +14,7 @@ function App() {
   });*/
   useEffect(() => {
     axios
-      .get('/')
+      .get('http://localhost:5000/api/todos')
       .then((response) => setTodos(response.data))
       .catch((error) => console.error('에러가 발생했습니다.', error));
   }, []);
@@ -24,9 +24,9 @@ function App() {
       <h1>투두리스트</h1>
       <ul>
         <li>
-          {todos.map((todo) => {
-            <li key={todo.ID}> {todo.TASK}</li>;
-          })}
+          {todos.map((todo) => (
+            <li key={todo.ID}>{todo.TASK}</li>
+          ))}
         </li>
       </ul>
     </div>
