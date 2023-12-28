@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom';
 export default function Header() {
   return (
     <Navbar bg="light" expand="lg">
-      <container>
+      <Container>
         <Navbar.Brand as={Link} to="/">
           로고
         </Navbar.Brand>
@@ -34,7 +34,7 @@ export default function Header() {
             Quiz
           </NavDropdown.Item>
         </NavDropdown>
-      </container>
+      </Container>
     </Navbar>
   );
 }

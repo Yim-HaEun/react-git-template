@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import 'bootstrap/dist/css/bootstrap.min.css'; //indexJs가 최상위 js이기때문에 경로문제로인해 제일 위에도 bootstrap을 넣어줌
+//import 'bootstrap/dist/css/bootstrap.min.css'; //indexJs가 최상위 js이기때문에 경로문제로인해 제일 위에도 bootstrap을 넣어줌
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
